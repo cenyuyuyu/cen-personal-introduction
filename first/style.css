@@ -1,0 +1,138 @@
+/* === 全局样式 === */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    text-align: center;
+    background-color: #f8f8f8;
+    border-radius: 40px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+
+}
+section.no-border{
+    background: transparent;
+    border-radius: none;
+    border-radius: 0;
+    padding: 30px;
+    box-shadow: none;
+}
+
+/* === 导航栏 === */
+.daolan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: aliceblue;
+    color: cornflowerblue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.logo img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0 auto;
+}
+
+.menu a {
+    color: aqua;
+    text-decoration: none;
+}
+
+/* === 个人介绍区域 === */
+.profile {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.profile img {
+    border-radius: 25% 10%;
+    width: 200px;
+}
+/* === 学习计划 === */
+#plan {
+    text-align: center;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.timeline-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.timeline-dot {
+    display: none;
+}
+
+/* === 按钮 === */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* === 导航高亮 === */
+.menu a.active {
+    color: cornflowerblue;
+    font-weight: bold;
+}
+
+/* === 打字机光标 === */
+.typing::after {
+    content: '|';
+    color: cornflowerblue;
+    font-weight: bold;
+    animation: blink-cursor 0.7s step-end infinite;
+}
+@keyframes blink-cursor {
+    50% { opacity: 0; }
+}
+
+/* === 隐藏工具类 === */
+.hidden {
+    display: none;
+}
