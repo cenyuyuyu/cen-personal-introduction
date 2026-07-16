@@ -1,0 +1,543 @@
+/* ========== 全局重置 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ========== 暗色主题 ========== */
+body.dark {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark nav {
+    background-color: #16213e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .nav-links a {
+    color: #ccc;
+}
+
+body.dark .skill-card {
+    background-color: #16213e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .timeline-content {
+    background-color: #16213e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .timeline-content::before {
+    border-color: transparent #16213e transparent transparent;
+}
+
+body.dark .contact-item {
+    background-color: #16213e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark footer {
+    background-color: #0f0f23;
+}
+
+body.dark section h2 {
+    color: #a8d8ea;
+}
+
+/* ========== 导航栏 ========== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #5b7fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #5b7fff;
+    border-bottom-color: #5b7fff;
+}
+
+/* ========== 头部 ========== */
+header {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5b7fff, #8e6bff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    box-shadow: 0 8px 25px rgba(91, 127, 255, 0.3);
+    transition: transform 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+.avatar-text {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    user-select: none;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+body.dark header h1 {
+    color: #f0f0f0;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+}
+
+body.dark .subtitle {
+    color: #aaa;
+}
+
+.tagline {
+    font-size: 1rem;
+    color: #5b7fff;
+    font-weight: 500;
+}
+
+/* ========== 通用 section 样式 ========== */
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #5b7fff, #8e6bff);
+    border-radius: 2px;
+    margin: 12px auto 0;
+}
+
+/* ========== 关于我 ========== */
+.about-content {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 35px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark .about-content {
+    background-color: #16213e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-content p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #5b7fff, #8e6bff);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(91, 127, 255, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ========== 技能 ========== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.skill-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.html-icon { background: linear-gradient(135deg, #e44d26, #f16529); }
+.css-icon  { background: linear-gradient(135deg, #264de4, #2965f1); }
+.js-icon   { background: linear-gradient(135deg, #f7df1e, #e6a900); color: #333; }
+.git-icon  { background: linear-gradient(135deg, #f05032, #de4c2a); }
+
+.skill-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+body.dark .skill-card h3 {
+    color: #e0e0e0;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e8ecf1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body.dark .skill-bar {
+    background-color: #2a2a4a;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #fff;
+    transition: width 1s ease-in-out;
+}
+
+.html-progress { background: linear-gradient(90deg, #e44d26, #f16529); }
+.css-progress  { background: linear-gradient(90deg, #264de4, #2965f1); }
+.js-progress   { background: linear-gradient(90deg, #f7df1e, #e6a900); color: #333; }
+.git-progress  { background: linear-gradient(90deg, #f05032, #de4c2a); }
+
+/* ========== 学习计划 - 时间线 ========== */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #5b7fff, #8e6bff);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #5b7fff;
+    border: 3px solid #f5f7fa;
+    box-shadow: 0 0 0 3px #5b7fff;
+}
+
+body.dark .timeline-dot {
+    border-color: #1a1a2e;
+}
+
+.timeline-content {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.3s;
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+body.dark .timeline-content h3 {
+    color: #e0e0e0;
+}
+
+.timeline-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+body.dark .timeline-content p {
+    color: #aaa;
+}
+
+.time {
+    display: inline-block;
+    padding: 4px 14px;
+    background: linear-gradient(135deg, #5b7fff, #8e6bff);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* ========== 联系方式 ========== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.contact-item {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-6px);
+}
+
+.contact-icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.contact-item p {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 6px;
+}
+
+body.dark .contact-item p {
+    color: #e0e0e0;
+}
+
+.contact-item a {
+    color: #5b7fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-item span:last-child {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+body.dark .contact-item span:last-child {
+    color: #aaa;
+}
+
+/* ========== 页脚 ========== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+footer p {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.theme-btn {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.theme-btn:hover {
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+}
+
+/* ========== 回到顶部按钮 ========== */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5b7fff, #8e6bff);
+    color: #fff;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(91, 127, 255, 0.3);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    header {
+        padding: 100px 20px 40px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .avatar-text {
+        font-size: 2.3rem;
+    }
+
+    section {
+        padding: 40px 16px;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-content {
+        padding: 24px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
